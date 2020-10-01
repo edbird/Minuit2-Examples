@@ -400,6 +400,14 @@ void example()
     std::cout << "fval changed from " << fval_before << " to " << fval_after << std::endl;
     std::cout << "param[0] changed from " << params_before.at(0) << " +- " << param_errs_before.at(0)
               << " to " << params_after.at(0) << " +- " << param_errs_after.at(0) << std::endl;
+    std::cout << "param[1] changed from " << params_before.at(1) << " +- " << param_errs_before.at(1)
+              << " to " << params_after.at(1) << " +- " << param_errs_after.at(1) << std::endl;
+    std::cout << "param[2] changed from " << params_before.at(2) << " +- " << param_errs_before.at(2)
+              << " to " << params_after.at(2) << " +- " << param_errs_after.at(2) << std::endl;
+
+    params_after[0] = params_after[0] + param_errs_after[0];
+    double fval_after_2 = theFCN.operator()(params_after);
+    std::cout << "fval_after_2=" << fval_after_2 << " fval_after=" << fval_after << std::endl;
     
     std::cout << "done - it was easy" << std::endl;
 
